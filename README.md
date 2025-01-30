@@ -1,4 +1,4 @@
-# financial-irregularity
+# Financial-Irregularity-Tracker
 To detect resolved and unresolved cases. Also, summarize and suggest next steps.
 
 *   **Problem and Approach:** This project addresses the challenge of automating financial discrepancy categorization and resolution. The approach involves preprocessing financial data, categorizing discrepancies using keywords and potentially LLM semantic understanding, and automating actions based on resolution status. BART (`facebook/bart-large-cnn`) is employed as the LLM for text generation tasks (summarization, next steps, and pattern identification).
@@ -46,7 +46,7 @@ For the unresolved cases in unresolved_cases.csv, check that the "summary" and "
 Edge Case Testing: It's highly recommended to test with various edge cases, such as:
 
 Empty or missing "Comments" fields.
-Comments with different phrasing related to resolution (e.g., "Issue is fixed," "Problem has been resolved").
+Comments with different phrasing related to resolution 
 Comments with mixed case and extra whitespace.
 Large datasets to evaluate the performance and scalability.
 Invalid or missing numeric or date data.
