@@ -1,18 +1,10 @@
-FROM python:3.10-slim
-# Set the working directory
-WORKDIR /app
+from flask import Flask
 
-# Copy only requirements first (better caching)
-COPY requirements.txt .
+app = Flask(__name__)
 
-# Install dependencies efficiently
-RUN pip install --no-cache-dir -r requirements.txt
+@app.route("/")
+def home():
+    return "Financial Discrepancy Flagger is running!"
 
-# Copy the rest of the application code
-COPY . .
-
-# Expose port 5000 (if running a web app)
-EXPOSE 5000
-
-# Run the application
-CMD ["python", "app.py"]
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
